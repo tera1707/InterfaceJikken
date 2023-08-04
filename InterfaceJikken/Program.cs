@@ -43,7 +43,7 @@ namespace InterfaceJikken
     {
         // 実質、MyInterface1と同じものを持ったinterface
     }
-#if true // パターン１
+#if true // パターン１  親クラスのメソッドをnewする
     internal class MyClass1 : IMyInterface1
     {
         public void Method1_1() => Debug.WriteLine(" Method1_1 of MyClass1");  // ①
@@ -55,7 +55,7 @@ namespace InterfaceJikken
     }
 #endif
 
-#if false // パターン２
+#if false // パターン２ 親interfaceのメソッドとして明示的実装する
     internal class MyClass1 : IMyInterface1
     {
         public void Method1_1() => Debug.WriteLine(" Method1_1 of MyClass1");  // ①
@@ -67,7 +67,7 @@ namespace InterfaceJikken
     }
 #endif
 
-#if false // パターン３
+#if false // パターン３ overrideする
     internal class MyClass1 : IMyInterface1
     {
         public virtual void Method1_1() => Debug.WriteLine(" Method1_1 of MyClass1");  // ①
